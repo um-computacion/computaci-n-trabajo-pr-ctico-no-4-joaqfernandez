@@ -1,10 +1,17 @@
 import unittest
 
-from src.fibonacci import factorial_recursivo
-from src.fibonacci import factorial_no_recursivo
+from src.factorial import factorial, factorial_recursivo, factorial_no_recursivo
 
 
 class TestFactorial(unittest.TestCase):
+
+    def test_con_8(self):
+        n = 8
+
+        result = factorial_recursivo(n)
+
+        self.assertEqual(result, 40320)
+
     def test_with_0(self):
         n = 0
 
