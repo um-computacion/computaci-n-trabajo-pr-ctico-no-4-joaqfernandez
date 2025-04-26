@@ -1,5 +1,5 @@
 import unittest
-from flatten import flatten
+from src.flatten import flatten
 
 
 
