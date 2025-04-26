@@ -1,9 +1,12 @@
-def flatten(lista):
+def flatten(elemento):
     resultado = []
-
-    for i in lista:
-        if isinstance(i, list): #isinstance(i, list) es una función que verifica si i es una lista
-            resultado.extend(lista(i))
-        else:
-            resultado.append(i)
+    if isinstance(elemento, dict):
+        for clave, valor in elemento.items():
+            resultado.extend(flatten(clave))
+            resultado.extend(flatten(valor))
+    elif isinstance(elemento, (list, tuple)):
+        for item in elemento:
+            resultado.extend(flatten(item))
+    else:
+        resultado.append(elemento)
     return resultado
